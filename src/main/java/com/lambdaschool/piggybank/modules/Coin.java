@@ -1,4 +1,72 @@
 package com.lambdaschool.piggybank.modules;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "coins")
 public class Coin {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long coinid;
+    private int quantity;
+    private double value;
+    private String name;
+    private String namePlural;
+
+    public Coin(int quantity, double value, String name, String namePlural) {
+        this.quantity = quantity;
+        this.value = value;
+        this.name = name;
+        this.namePlural = namePlural;
+    }
+
+    public Coin() {
+    }
+
+    public long getCoinid() {
+        return coinid;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNamePlural() {
+        return namePlural;
+    }
+
+    public void setNamePlural(String namePlural) {
+        this.namePlural = namePlural;
+    }
+
+    @Override
+    public String toString() {
+        return "Coin{" +
+                "quantity=" + quantity +
+                ", value=" + value +
+                ", name='" + name + '\'' +
+                ", namePlural='" + namePlural + '\'' +
+                '}';
+    }
 }
