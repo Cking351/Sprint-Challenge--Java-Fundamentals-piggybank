@@ -3,6 +3,7 @@ package com.lambdaschool.piggybank.controllers;
 import com.lambdaschool.piggybank.modules.Coin;
 import com.lambdaschool.piggybank.repositories.CoinRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,15 @@ public class CoinController {
 
     @Autowired
     CoinRepository cnrepos;
+    List<Coin> findCoin(List<Coin> myList, CheckCoin tester) {
+        List<Coin> tempList = new ArrayList<>();
+        for (Coin c : myList) {
+            if (tester.test(c)) {
+                tempList.add(c);
+            }
+        }
+        return tempList;
+    }
 
 
 
@@ -35,9 +45,20 @@ public class CoinController {
 
         double totalCoins = 0;
         List<Coin> myList = new ArrayList<>();
+        List<String> totalList = new ArrayList<>();
         cnrepos.findAll().iterator().forEachRemaining(myList::add);
         for (Coin c : myList) {
-            totalCoins = 
+            if (c.getQuantity() > 1) {
+                System.out.println(c.getQuantity() + " " + c.getNamePlural());
+            } else {
+                System.out.println(c.getQuantity() + " " + c.getName());
+            }
+            totalCoins = c.getValue() * c.getQuantity();
         }
+
+        System.out.println();
+        System.out.println(totalCoins);
+        System.out.println("The piggy bank holds ");
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

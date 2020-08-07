@@ -12,13 +12,13 @@ public class Coin {
     private int quantity;
     private double value;
     private String name;
-    private String namePlural;
+    private String nameplural;
 
     public Coin(int quantity, double value, String name, String namePlural) {
         this.quantity = quantity;
         this.value = value;
         this.name = name;
-        this.namePlural = namePlural;
+        this.nameplural = namePlural;
     }
 
     public Coin() {
@@ -53,11 +53,18 @@ public class Coin {
     }
 
     public String getNamePlural() {
-        return namePlural;
+        return nameplural;
     }
 
     public void setNamePlural(String namePlural) {
-        this.namePlural = namePlural;
+        this.nameplural = namePlural;
+    }
+
+    public String getAllCoins() {
+        if (quantity > 1) {
+            return quantity + " " + nameplural;
+        }
+        return quantity + " " + name;
     }
 
     @Override
@@ -66,7 +73,8 @@ public class Coin {
                 "quantity=" + quantity +
                 ", value=" + value +
                 ", name='" + name + '\'' +
-                ", namePlural='" + namePlural + '\'' +
+                ", namePlural='" + nameplural + '\'' +
                 '}';
     }
+
 }
