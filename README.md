@@ -23,22 +23,39 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how you took advantage of Java's Object Oriented approach to solve the sprint challenge.
+
+- I used a Coin object to base the majority of my work on. I used methods and variables assigned to the object to be able to print out what was needed for MVP.
+
 2. Explain the three steps needed to run a Java application (using the JDK) including what each step does and how those step correlate to running a JavaScript application.
+
+- 1. Compiling : this is similar to when the browser compiles JS
+- 2. Packaged into JAR file: This is similar to when the broswer creates HTML elements from JS
+- 3. Run : JS runs in the browser when called.
+
 3. Explain how Java being a strongly typed language affected you solution.
+
+- It required me to plan more upfront. Having to think ahead to what KIND of lists and variables i would need, and not just
+  a blank space in memory being assigned whatever i wanted. It also made me consider what type of variables i might be trying to put together
+  and whether or not that would require type casting.
+
 4. Can you explain the differences between Abstract Classes and Interfaces including how they are used in your application?
+
+- Abstract Classes are a kind of blueprint for how a class can be built, while Interfaces are a more strict guide for implementation of a class.
+  I used an interface to extend the CRUDREPOSITORY so that i had access to its methods.
+
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Create the proper directory structure for developing a Java Application
-- [ ] Push commits: `git push origin <firstName-lastName>`
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create the proper directory structure for developing a Java Application
+- [x] Push commits: `git push origin <firstName-lastName>`
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 

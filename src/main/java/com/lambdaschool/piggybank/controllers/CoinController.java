@@ -16,17 +16,6 @@ public class CoinController {
 
     @Autowired
     CoinRepository cnrepos;
-    List<Coin> findCoin(List<Coin> myList, CheckCoin tester) {
-        List<Coin> tempList = new ArrayList<>();
-        for (Coin c : myList) {
-            if (tester.test(c)) {
-                tempList.add(c);
-            }
-        }
-        return tempList;
-    }
-
-
 
 
     //http://localhost:2019/total <- print contents to console and return OK
@@ -45,7 +34,6 @@ public class CoinController {
 
         double totalCoins = 0;
         List<Coin> myList = new ArrayList<>();
-        List<String> totalList = new ArrayList<>();
         cnrepos.findAll().iterator().forEachRemaining(myList::add);
         for (Coin c : myList) {
             if (c.getQuantity() > 1) {
@@ -53,12 +41,15 @@ public class CoinController {
             } else {
                 System.out.println(c.getQuantity() + " " + c.getName());
             }
-            totalCoins = c.getValue() * c.getQuantity();
+            totalCoins = totalCoins + c.getValue() * c.getQuantity();
+
         }
 
-        System.out.println();
-        System.out.println(totalCoins);
-        System.out.println("The piggy bank holds ");
+
+
+
+
+        System.out.println("The piggy bank holds " + totalCoins);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

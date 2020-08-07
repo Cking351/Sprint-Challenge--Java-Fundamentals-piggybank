@@ -60,12 +60,6 @@ public class Coin {
         this.nameplural = namePlural;
     }
 
-    public String getAllCoins() {
-        if (quantity > 1) {
-            return quantity + " " + nameplural;
-        }
-        return quantity + " " + name;
-    }
 
     @Override
     public String toString() {
